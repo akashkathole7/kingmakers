@@ -460,7 +460,7 @@ def register():
         # Send welcome email
         try:
             msg = Message(
-                'Welcome to School of Inspirational AI',
+                'Welcome to kingmaker',
                 recipients=[data['email']],
                 body=f"Welcome {data['name']}! Thank you for registering."
             )
