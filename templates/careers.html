@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our AI Revolution | Kingmaker AI Careers</title>
+    <meta name="description" content="Shape the future of AI with Kingmaker. Explore innovative career opportunities in artificial intelligence and machine learning.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Neural Network Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/50 to-pink-900/50"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight animate__animated animate__fadeInUp">
+                Shape Tomorrow's
+                <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                    Intelligence
+                </span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+                Join a team of visionaries dedicated to pushing the boundaries of artificial intelligence. Your journey to revolutionize the future begins here.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#open-positions" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all">
+                    View Open Positions
+                </a>
+                <button onclick="takeAssessment()" class="px-8 py-3 border-2 border-purple-500 rounded-lg font-semibold hover:bg-purple-500/20 transform hover:scale-105 transition-all">
+                    Take AI Aptitude Test
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating AI Elements -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="floating-element absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
+            <div class="floating-element absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl" style="animation-delay: -2s"></div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="relative py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        Our Culture
+                    </span>
+                </h2>
+                <p class="mt-4 text-xl text-gray-400">Where innovation meets purpose</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Innovation -->
+                <div class="culture-card group" data-aos="fade-up">
+                    <div class="relative p-6 bg-gray-900 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-blue-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Innovation First</h3>
+                            <p class="text-gray-400">Push boundaries and explore new frontiers in AI technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth -->
+                <div class="culture-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative p-6 bg-gray-900 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-purple-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Continuous Growth</h3>
+                            <p class="text-gray-400">Learn, evolve, and grow with cutting-edge AI technologies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact -->
+                <div class="culture-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative p-6 bg-gray-900 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-red-600/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-pink-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Global Impact</h3>
+                            <p class="text-gray-400">Shape the future of technology and human advancement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section id="open-positions" class="relative py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        Open Positions
+                    </span>
+                </h2>
+                <p class="mt-4 text-xl text-gray-400">Join our mission to revolutionize AI</p>
+            </div>
+
+            <div class="grid gap-8" id="positions-container">
+                <!-- Position cards will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Modal -->
+    <div id="assessment-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl">
+            <div class="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6">AI Aptitude Assessment</h3>
+                <div id="assessment-content">
+                    <!-- Assessment questions will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Sample positions data
+        const positions = [
+            {
+                title: "Senior AI Engineer",
+                department: "AI Research",
+                location: "Remote",
+                type: "Full-time",
+                description: "Lead the development of next-generation AI systems.",
+                requirements: [
+                    "5+ years of ML/AI experience",
+                    "Strong background in deep learning",
+                    "Experience with PyTorch or TensorFlow"
+                ]
+            },
+            {
+                title: "Machine Learning Researcher",
+                department: "Research & Development",
+                location: "Hybrid",
+                type: "Full-time",
+                description: "Conduct cutting-edge research in machine learning and NLP.",
+                requirements: [
+                    "PhD in Computer Science or related field",
+                    "Publication record in top-tier conferences",
+                    "Experience with large language models"
+                ]
+            },
+            {
+                title: "AI Product Manager",
+                department: "Product",
+                location: "Remote",
+                type: "Full-time",
+                description: "Drive the vision and strategy for AI-powered products.",
+                requirements: [
+                    "3+ years of product management experience",
+                    "Strong technical background in AI/ML",
+                    "Excellent communication skills"
+                ]
+            }
+        ];
+
+        // Load positions
+        function loadPositions() {
+            const container = document.getElementById('positions-container');
+            positions.forEach(position => {
+                const card = document.createElement('div');
+                card.className = 'relative group';
+                card.innerHTML = `
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl blur-xl transition-all duration-300 group-hover:blur-2xl"></div>
+                    <div class="relative p-8 bg-gray-900 rounded-xl border border-gray-800">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">${position.title}</h3>
+                                <div class="flex space-x-4 text-gray-400">
+                                    <span>${position.department}</span>
+                                    <span>•</span>
+                                    <span>${position.location}</span>
+                                    <span>•</span>
+                                    <span>${position.type}</span>
+                                </div>
+                            </div>
+                            <button onclick="applyNow('${position.title}')" 
+                                class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
+                                Apply Now
+                            </button>
+                        </div>
+                        <p class="text-gray-300 mb-4">${position.description}</p>
+                        <div class="space-y-2">
+                            <h4 class="font-semibold">Requirements:</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                ${position.requirements.map(req => `<li>${req}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // AI Aptitude Assessment
+        let currentQuestion = 0;
+        const assessmentQuestions = [
+            {
+                question: "Which approach would you take to solve an complex AI problem?",
+                options: [
+                    "Break it down into smaller, manageable components",
+                    "Apply existing solutions from similar problems",
+                    "Innovate completely new approaches",
+                    "Collaborate with team members for diverse perspectives"
+                ]
+            },
+            {
+                question: "How do you prefer to learn new AI technologies?",
+                options: [
+                    "Hands-on experimentation",
+                    "Reading documentation and research papers",
+                    "Video tutorials and courses",
+                    "Pair programming with experts"
+                ]
+            },
+            {
+                question: "What excites you most about AI?",
+                options: [
+                    "Solving complex technical challenges",
+                    "Creating societal impact",
+                    "Building innovative products",
+                    "Advancing scientific knowledge"
+                ]
+            }
+        ];
+
+        function takeAssessment() {
+            const modal = document.getElementById('assessment-modal');
+            modal.classList.remove('hidden');
+            showQuestion(0);
+        }
+
+        function showQuestion(index) {
+            const content = document.getElementById('assessment-content');
+            const question = assessmentQuestions[index];
+            
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-semibold">${question.question}</h4>
+                        <span class="text-gray-400">Question ${index + 1}/${assessmentQuestions.length}</span>
+                    </div>
+                    <div class="space-y-4">
+                        ${question.options.map((option, i) => `
+                            <button onclick="selectAnswer(${index}, ${i})" 
+                                class="w-full p-4 text-left bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors answer-option">
+                                ${option}
+                            </button>
+                        `).join('')}
+                    </div>
+                    ${index > 0 ? `
+                        <button onclick="showQuestion(${index - 1})" 
+                            class="px-6 py-2 text-gray-400 hover:text-white transition-colors">
+                            Previous
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function selectAnswer(questionIndex, answerIndex) {
+            // Highlight selected answer
+            const options = document.querySelectorAll('.answer-option');
+            options.forEach((option, i) => {
+                if (i === answerIndex) {
+                    option.classList.add('ring-2', 'ring-blue-500');
+                } else {
+                    option.classList.remove('ring-2', 'ring-blue-500');
+                }
+            });
+
+            // Store answer
+            setTimeout(() => {
+                if (questionIndex < assessmentQuestions.length - 1) {
+                    showQuestion(questionIndex + 1);
+                } else {
+                    showResults();
+                }
+            }, 500);
+        }
+
+        function showResults() {
+            const content = document.getElementById('assessment-content');
+            content.innerHTML = `
+                <div class="text-center space-y-6">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-2">Assessment Complete!</h4>
+                        <p class="text-gray-400">Based on your responses, you show strong potential for AI development and innovation.</p>
+                    </div>
+                    <div class="flex flex-col space-y-4">
+                        <button onclick="viewRecommendedPositions()" 
+                            class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+                            View Recommended Positions
+                        </button>
+                        <button onclick="closeAssessment()" 
+                            class="px-8 py-3 border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function viewRecommendedPositions() {
+            const modal = document.getElementById('assessment-modal');
+            modal.classList.add('hidden');
+            document.getElementById('open-positions').scrollIntoView({ behavior: 'smooth' });
+            highlightRecommendedPositions();
+        }
+
+        function highlightRecommendedPositions() {
+            // Add subtle highlight animation to recommended positions
+            const positionCards = document.querySelectorAll('#positions-container > div');
+            positionCards.forEach(card => {
+                card.classList.add('animate__animated', 'animate__pulse');
+            });
+        }
+
+        function closeAssessment() {
+            const modal = document.getElementById('assessment-modal');
+            modal.classList.add('hidden');
+        }
+
+        function applyNow(position) {
+            // Show application form modal
+            showApplicationForm(position);
+        }
+
+        function showApplicationForm(position) {
+            const modal = document.getElementById('assessment-modal');
+            const content = document.getElementById('assessment-content');
+            
+            modal.classList.remove('hidden');
+            content.innerHTML = `
+                <form onsubmit="submitApplication(event)" class="space-y-6">
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-bold mb-2">Apply for ${position}</h4>
+                        <p class="text-gray-400">Complete the form below to submit your application</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Resume/CV</label>
+                            <input type="file" accept=".pdf,.doc,.docx" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Why do you want to join us?</label>
+                            <textarea rows="4" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" onclick="closeAssessment()" 
+                            class="px-6 py-2 border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors">
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                            class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            `;
+        }
+
+        function submitApplication(event) {
+            event.preventDefault();
+            const content = document.getElementById('assessment-content');
+            
+            content.innerHTML = `
+                <div class="text-center space-y-6">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-2">Application Submitted!</h4>
+                        <p class="text-gray-400">Thank you for applying. We'll review your application and get back to you soon.</p>
+                    </div>
+                    <button onclick="closeAssessment()" 
+                        class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+                        Close
+                    </button>
+                </div>
+            `;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPositions();
+        });
+    </script>
+</body>
+</html>

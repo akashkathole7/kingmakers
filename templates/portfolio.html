@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Kathole | AI & ML Engineering Portfolio</title>
+    <meta name="description" content="Explore the innovative AI & ML engineering work of Akash Kathole. Featuring cutting-edge projects in machine learning, NLP, and data science.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .neural-bg {
+            background: linear-gradient(45deg, #0f172a, #1e293b);
+            animation: gradientFlow 15s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glitch {
+            position: relative;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                         0.025em 0.04em 0 #fffc00;
+            animation: glitch 725ms infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                             0.025em 0.04em 0 #fffc00; }
+            15% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                             0.025em 0.04em 0 #fffc00; }
+            16% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                             -0.05em -0.05em 0 #fffc00; }
+            49% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                             -0.05em -0.05em 0 #fffc00; }
+            50% { text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                             0 -0.04em 0 #fffc00; }
+            99% { text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                             0 -0.04em 0 #fffc00; }
+            100% { text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                             -0.04em -0.025em 0 #fffc00; }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #60a5fa;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #60a5fa }
+        }
+
+        .skill-progress {
+            transform: translateX(-100%);
+            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-progress.animate {
+            transform: translateX(0);
+        }
+
+        .project-card {
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateZ(40px) rotateX(10deg) rotateY(10deg);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #60a5fa, #8b5cf6, #ec4899);
+            border-radius: inherit;
+            z-index: -1;
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .neural-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #60a5fa;
+            border-radius: 50%;
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .neural-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #60a5fa50, transparent);
+            transform-origin: left;
+            pointer-events: none;
+        }
+
+        .experience-card {
+            transition: all 0.5s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cursor-glow {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #60a5fa50 0%, transparent 70%);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        .parallax {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+
+        .parallax-layer {
+            transition: transform 0.1s;
+        }
+
+        .code-block {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-line {
+            font-family: 'Fira Code', monospace;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 100px;
+            background: #1f2937;
+        }
+
+        .scroll-progress {
+            height: 0%;
+            width: 100%;
+            background: linear-gradient(to bottom, #60a5fa, #8b5cf6);
+            transition: height 0.1s;
+        }
+
+        /* Advanced 3D Text Effect */
+        .text-3d {
+            text-shadow: 
+                1px 1px 1px #4f46e5,
+                2px 2px 1px #4f46e5,
+                3px 3px 1px #4f46e5,
+                4px 4px 1px #4f46e5,
+                5px 5px 1px #4f46e5,
+                6px 6px 1px #4f46e5;
+            transform: perspective(500px) rotateX(20deg);
+        }
+
+        /* Interactive Background Grid */
+        .grid-background {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(96, 165, 250, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform-origin: center;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from { transform: perspective(500px) rotateX(45deg) translateY(0); }
+            to { transform: perspective(500px) rotateX(45deg) translateY(50px); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #60a5fa, #8b5cf6);
+            border-radius: 4px;
+        }
+
+        /* Loading Animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #60a5fa;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Page Loader -->
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Interactive Background -->
+    <div class="grid-background"></div>
+    <div id="neural-network" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 bg-gray-900/90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                    AK
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experience</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center py-20">
+        <div class="absolute inset-0 neural-bg"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight glitch mb-8">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        Akash Kathole
+                    </span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-300 typewriter">
+                    Artificical Intelligence Engineer & AI Innovator
+                </p>
+                <div class="mt-12 flex justify-center space-x-6">
+                    <a href="#projects" class="group relative px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold overflow-hidden">
+                        <span class="relative z-10">View Projects</span>
+                        <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    </a>
+                    <a href="#contact" class="group relative px-8 py-3 border-2 border-purple-500 rounded-lg font-bold overflow-hidden">
+                        <span class="relative z-10">Contact Me</span>
+                        <div class="absolute inset-0 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="floating absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full opacity-50"></div>
+            <div class="floating absolute top-1/3 right-1/3 w-6 h-6 bg-purple-400 rounded-full opacity-50" style="animation-delay: -2s"></div>
+            <div class="floating absolute bottom-1/4 right-1/4 w-5 h-5 bg-pink-400 rounded-full opacity-50" style="animation-delay: -4s"></div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <span class="text-sm text-gray-400 mb-2">Scroll to explore</span>
+            <div class="w-1 h-8 bg-gradient-to-b from-blue-400 to-purple-600 rounded-full animate-bounce"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                            About Me
+                        </span>
+                    </h2>
+                    <p class="text-lg text-gray-300">
+                        Innovative Machine Learning Engineer with expertise in creating AI systems that transform business processes and deliver impactful insights. Known for spearheading projects like Pearl - Process Enhancement Resource Learning and Business DNA Analysis.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-4 py-2 bg-gray-800 rounded-lg">
+                            <span class="text-2xl font-bold text-blue-400">3+</span>
+                            <span class="block text-sm text-gray-400">Years Experience</span>
+                        </div>
+                        <div class="px-4 py-2 bg-gray-800 rounded-lg">
+                            <span class="text-2xl font-bold text-purple-400">50+</span>
+                            <span class="block text-sm text-gray-400">Projects Completed</span>
+                        </div>
+                        <div class="px-4 py-2 bg-gray-800 rounded-lg">
+                            <span class="text-2xl font-bold text-pink-400">15+</span>
+                            <span class="block text-sm text-gray-400">AI Models Developed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl blur-xl"></div>
+                    <div class="relative bg-gray-800 p-6 rounded-xl">
+                        <div class="code-block">
+                            <pre class="text-sm font-mono">
+<code class="language-python text-gray-300">
+class AIEngineer:
+    def __init__(self):
+        self.name = "Akash Kathole"
+        self.role = "Machine Learning Engineer"
+        self.skills = ["Python", "TensorFlow", "PyTorch"]
+        
+    def solve_problems(self, challenge):
+        solution = self.analyze(challenge)
+        return self.implement_ai_solution(solution)
+        
+    def continuous_learning(self):
+        while True:
+            new_technology = self.explore()
+            self.skills.append(new_technology)
+            self.share_knowledge()
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Technical Skills
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Machine Learning -->
+                <div class="skill-card">
+                    <div class="relative p-6 bg-gray-900 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4">Machine Learning</h3>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>TensorFlow</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-blue-400 to-purple-600" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>PyTorch</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-purple-400 to-pink-600" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>Scikit-learn</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-pink-400 to-red-600" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Learning -->
+                <div class="skill-card">
+                    <div class="relative p-6 bg-gray-900 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4">Deep Learning</h3>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>Neural Networks</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-green-400 to-blue-600" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>Computer Vision</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-yellow-400 to-green-600" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-1">
+                                    <span>NLP</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-orange-400 to-yellow-600" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Featured Projects
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pearl Project -->
+                <div class="project-card group">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full transform transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Pearl - AI Learning System</h3>
+                            <p class="text-gray-400">Advanced AI platform trained on vast libraries for intelligent, context-aware responses.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 text-sm bg-blue-600/20 text-blue-400 rounded-md">Machine Learning</span>
+                                <span class="px-2 py-1 text-sm bg-purple-600/20 text-purple-400 rounded-md">NLP</span>
+                                <span class="px-2 py-1 text-sm bg-pink-600/20 text-pink-400 rounded-md">TensorFlow</span>
+                            </div>
+                            <div class="project-details hidden group-hover:block absolute inset-0 bg-gray-900/95 rounded-xl p-6 transform transition-all duration-300">
+                                <div class="h-full flex flex-col justify-between">
+                                    <div class="space-y-4">
+                                        <h4 class="text-lg font-bold">Key Features</h4>
+                                        <ul class="list-disc list-inside text-gray-300">
+                                            <li>Context-aware responses</li>
+                                            <li>Multi-language support</li>
+                                            <li>Real-time learning</li>
+                                        </ul>
+                                    </div>
+                                    <div class="flex justify-end space-x-4">
+                                        <button class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+                                            Demo
+                                        </button>
+                                        <button class="px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/20 transition-colors">
+                                            Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business DNA Project -->
+                <div class="project-card group">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full transform transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Business DNA Analysis</h3>
+                            <p class="text-gray-400">AI-driven organizational behavior analysis platform providing actionable insights.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 text-sm bg-purple-600/20 text-purple-400 rounded-md">Data Science</span>
+                                <span class="px-2 py-1 text-sm bg-pink-600/20 text-pink-400 rounded-md">PyTorch</span>
+                                <span class="px-2 py-1 text-sm bg-blue-600/20 text-blue-400 rounded-md">Analytics</span>
+                            </div>
+                            <!-- Interactive hover overlay similar to Pearl project -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Agent Project -->
+                <div class="project-card group">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full transform transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-red-600/20 rounded-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="relative space-y-4">
+                            <div class="w-12 h-12 bg-pink-600/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Intelligent AI Agents</h3>
+                            <p class="text-gray-400">Autonomous AI agents for task automation and decision-making.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 text-sm bg-pink-600/20 text-pink-400 rounded-md">Reinforcement Learning</span>
+                                <span class="px-2 py-1 text-sm bg-red-600/20 text-red-400 rounded-md">Automation</span>
+                            </div>
+                            <!-- Interactive hover overlay similar to Pearl project -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="relative py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Professional Journey
+                </span>
+            </h2>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-700"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- Current Role -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full"></div>
+                        </div>
+                        <div class="ml-8 lg:ml-0 lg:w-1/2 lg:pr-8">
+                            <div class="experience-card bg-gray-900 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold mb-2">Machine Learning Engineer</h3>
+                                <p class="text-blue-400 mb-4">School of Inspirational Leadership | 2024 - Present</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 mr-2 text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Developed Pearl - Process Enhancement Resource Learning
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 mr-2 text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Led Business DNA Analysis implementation
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 mr-2 text-blue-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Reduced operational costs by 25%
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="relative">
+                        <div class="flex items-center justify-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
+                        </div>
+                        <div class="ml-8 lg:ml-auto lg:w-1/2 lg:pl-8">
+                            <div class="experience-card bg-gray-900 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold mb-2">Bachelor's in Artificial Intelligence</h3>
+                                <p class="text-purple-400 mb-4">Dr.Babasaheb Ambedkar Technological University | 2020-2024</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 mr-2 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Winner, Luminous National Level Hackathon (2023)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 mr-2 text-purple-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        Published research papers on AI applications
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        Let's Connect
+                    </span>
+                </h2>
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="group relative">
+                            <input type="text" required
+                                class="w-full px-4 py-3 bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="Your Name">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div class="group relative">
+                            <input type="email" required
+                                class="w-full px-4 py-3 bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="Your Email">
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                    </div>
+                    <div class="group relative"><textarea required rows="6"
+                        class="w-full px-4 py-3 bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                        placeholder="Your Message"></textarea>
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-600/20 to-red-600/20 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <button type="submit" 
+                    class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 group relative overflow-hidden">
+                    <span class="relative z-10">Send Message</span>
+                    <div class="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform"></div>
+                </button>
+            </form>
+
+            <!-- Social Links -->
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="https://linkedin.com/akash-kathole" target="_blank" 
+                    class="social-link p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/username" target="_blank"
+                    class="social-link p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="mailto:akashkathole@outlook.com"
+                    class="social-link p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Notification System -->
+<div id="notification-container" class="fixed bottom-4 right-4 z-50"></div>
+
+<!-- Additional Scripts -->
+<script>
+    // Project Card 3D Effect
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
+
+    // Notification System
+    function showNotification(message, type = 'success') {
+        const notification = document.createElement('div');
+        notification.className = `transform translate-y-full opacity-0 transition-all duration-500 px-6 py-3 rounded-lg text-white mb-4 ${
+            type === 'success' ? 'bg-green-600' : 'bg-red-600'
+        }`;
+        notification.textContent = message;
+        
+        const container = document.getElementById('notification-container');
+        container.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.classList.remove('translate-y-full', 'opacity-0');
+        }, 100);
+        
+        // Animate out
+        setTimeout(() => {
+            notification.classList.add('translate-y-full', 'opacity-0');
+            setTimeout(() => notification.remove(), 500);
+        }, 5000);
+    }
+
+    // Contact Form Handling
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+
+        try {
+            submitButton.disabled = true;
+            submitButton.innerHTML = `
+                <svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            `;
+
+            // Simulate form submission
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            showNotification('Message sent successfully! I will get back to you soon.');
+            form.reset();
+            
+        } catch (error) {
+            showNotification('Failed to send message. Please try again.', 'error');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
+        }
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Social Link Hover Effects
+    document.querySelectorAll('.social-link').forEach(link => {
+        link.addEventListener('mouseover', () => {
+            const cursor = document.querySelector('.cursor-glow');
+            if (cursor) {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+                cursor.style.background = 'radial-gradient(circle, rgba(96, 165, 250, 0.4) 0%, transparent 70%)';
+            }
+        });
+
+        link.addEventListener('mouseout', () => {
+            const cursor = document.querySelector('.cursor-glow');
+            if (cursor) {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.background = 'radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%)';
+            }
+        });
+    });
+
+    // Initialize all animations
+    function initializeAnimations() {
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .experience-card, .skill-card').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeAnimations();
+    });
+</script>
+</body>
+</html>
+
+    <!-- More sections will be added in the next continuation -->
+    
+    <!-- Initialize Scripts -->
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        // Cursor Glow Effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor-glow');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            // Scale up on interactive elements
+            const target = e.target;
+            if (target.tagName === 'A' || target.tagName === 'BUTTON' || 
+                target.closest('.project-card') || target.closest('.skill-card')) {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+            } else {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+            }
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.height = `${scrollPercent}%`;
+        });
+
+        // Skill Progress Animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-progress').forEach(skill => {
+            skillObserver.observe(skill);
+        });
+
+        // More initialization code will be added...
+    </script>
+</body>
+</html>

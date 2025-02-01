@@ -1,0 +1,11 @@
+flask
+flask-cors
+flask-mail
+flask-login
+werkzeug
+pymongo
+redis
+pyjwt
+bleach
+python-dotenv
+gunicorn

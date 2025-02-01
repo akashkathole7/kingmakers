@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Kingmaker AI - Shape the Future</title>
+    <meta name="description" content="Join the AI revolution with Kingmaker. Create your account and unlock the power of artificial intelligence.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Neural Network Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+    
+    <!-- Main Content -->
+    <div class="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 z-10">
+        <div class="max-w-md w-full space-y-8 bg-gray-800/50 p-8 rounded-2xl backdrop-blur-lg border border-gray-700">
+            <!-- Logo and Title -->
+            <div class="text-center">
+                <div class="relative group mb-6 inline-block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+                    <div class="relative px-6 py-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                        Kingmaker
+                    </div>
+                </div>
+                <h2 class="mt-6 text-3xl font-extrabold">Join the AI Revolution</h2>
+                <p class="mt-2 text-gray-400">Create your account and unlock the future</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="register-form" class="mt-8 space-y-6">
+                <!-- Progress Indicator -->
+                <div class="relative pt-1">
+                    <div class="flex mb-2 items-center justify-between">
+                        <div class="text-sm text-gray-400 w-full flex justify-between">
+                            <span class="registration-step active">Account</span>
+                            <span class="registration-step">Profile</span>
+                            <span class="registration-step">Preferences</span>
+                        </div>
+                    </div>
+                    <div class="flex h-2 mb-4 overflow-hidden bg-gray-700 rounded">
+                        <div id="progress-bar" class="w-1/3 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Account Details -->
+                <div id="step-1" class="space-y-4">
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                        <div class="relative">
+                            <input type="email" name="email" required 
+                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="you@example.com">
+                            <div class="strength-indicator hidden"></div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" name="password" required 
+                                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="••••••••">
+                            <div class="password-strength mt-2 h-1 rounded-full bg-gray-700">
+                                <div class="strength-bar h-full rounded-full transition-all duration-300"></div>
+                            </div>
+                        </div>
+                        <p class="password-feedback mt-1 text-sm text-gray-400"></p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Profile Details -->
+                <div id="step-2" class="space-y-4 hidden">
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                        <input type="text" name="name" 
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            placeholder="John Doe">
+                    </div>
+
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Company/Organization</label>
+                        <input type="text" name="company" 
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            placeholder="Company Name">
+                    </div>
+
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Role</label>
+                        <select name="role" 
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            <option value="">Select your role</option>
+                            <option value="developer">Developer</option>
+                            <option value="data_scientist">Data Scientist</option>
+                            <option value="business_analyst">Business Analyst</option>
+                            <option value="executive">Executive</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 3: AI Preferences -->
+                <div id="step-3" class="space-y-4 hidden">
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Areas of Interest</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" name="interests" value="machine_learning" 
+                                    class="form-checkbox h-5 w-5 text-blue-500 rounded bg-gray-700 border-gray-600">
+                                <span class="text-gray-300">Machine Learning</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" name="interests" value="natural_language" 
+                                    class="form-checkbox h-5 w-5 text-blue-500 rounded bg-gray-700 border-gray-600">
+                                <span class="text-gray-300">Natural Language Processing</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" name="interests" value="computer_vision" 
+                                    class="form-checkbox h-5 w-5 text-blue-500 rounded bg-gray-700 border-gray-600">
+                                <span class="text-gray-300">Computer Vision</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" name="interests" value="robotics" 
+                                    class="form-checkbox h-5 w-5 text-blue-500 rounded bg-gray-700 border-gray-600">
+                                <span class="text-gray-300">Robotics & Automation</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Experience Level</label>
+                        <div class="relative">
+                            <input type="range" name="experience" min="1" max="5" value="3"
+                                class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between space-x-4">
+                    <button type="button" id="prev-btn" 
+                        class="hidden px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                        Previous
+                    </button>
+                    <button type="button" id="next-btn" 
+                        class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105">
+                        Next
+                    </button>
+                </div>
+
+                <!-- Terms and Privacy -->
+                <div class="text-sm text-gray-400 text-center">
+                    By registering, you agree to our 
+                    <a href="/terms" class="text-blue-400 hover:text-blue-300">Terms of Service</a> and 
+                    <a href="/privacy" class="text-blue-400 hover:text-blue-300">Privacy Policy</a>
+                </div>
+            </form>
+
+            <!-- Social Registration -->
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-gray-800 text-gray-400">Or continue with</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-3 gap-3">
+                    <button class="w-full px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+                        </svg>
+                    </button>
+
+                    <button class="w-full px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/>
+                        </svg>
+                    </button>
+
+                    <button class="w-full px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23 0 0 1.129 1.219 1.129 1.219 0 0 3.797-1.54-.124 1.484-2.19 1.484-3.494-1.484-3.494-3.32-1.871-6.035-1.871z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Component -->
+    <div id="notification" class="fixed bottom-4 right-4 transform translate-y-full opacity-0 transition-all duration-300"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Form step handling
+        const form = document.getElementById('register-form');
+        const steps = ['step-1', 'step-2', 'step-3'];
+        let currentStep = 0;
+
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const stepIndicators = document.querySelectorAll('.registration-step');
+
+        function updateStep(direction) {
+            // Hide current step
+            document.getElementById(steps[currentStep]).classList.add('hidden');
+            
+            // Update current step
+            currentStep += direction;
+            
+            // Show new step
+            document.getElementById(steps[currentStep]).classList.remove('hidden');
+            
+            // Update progress bar
+            progressBar.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+            
+            // Update step indicators
+            stepIndicators.forEach((indicator, index) => {
+                if (index <= currentStep) {
+                    indicator.classList.add('text-blue-400');
+                } else {
+                    indicator.classList.remove('text-blue-400');
+                }
+            });
+
+            // Update buttons
+            prevBtn.classList.toggle('hidden', currentStep === 0);
+            nextBtn.textContent = currentStep === steps.length - 1 ? 'Create Account' : 'Next';
+        }
+
+        nextBtn.addEventListener('click', async () => {
+            if (currentStep === steps.length - 1) {
+                // Final step - submit form
+                await handleRegistration();
+            } else {
+                if (validateCurrentStep()) {
+                    updateStep(1);
+                }
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            updateStep(-1);
+        });
+
+        // Password strength checker
+        const passwordInput = form.querySelector('input[name="password"]');
+        const strengthBar = document.querySelector('.strength-bar');
+        const passwordFeedback = document.querySelector('.password-feedback');
+
+        passwordInput.addEventListener('input', () => {
+            const strength = checkPasswordStrength(passwordInput.value);
+            updatePasswordStrengthIndicator(strength);
+        });
+
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            const patterns = {
+                length: password.length >= 8,
+                uppercase: /[A-Z]/.test(password),
+                lowercase: /[a-z]/.test(password),
+                numbers: /\d/.test(password),
+                special: /[!@#$%^&*]/.test(password)
+            };
+
+            strength = Object.values(patterns).filter(Boolean).length;
+            
+            return {
+                score: strength,
+                patterns
+            };
+        }
+
+        function updatePasswordStrengthIndicator({ score, patterns }) {
+            const colors = ['bg-red-500', 'bg-orange-500', 'bg-yellow-500', 'bg-green-500', 'bg-blue-500'];
+            const messages = [
+                'Too weak',
+                'Could be stronger',
+                'Getting better',
+                'Strong password',
+                'Excellent password'
+            ];
+
+            strengthBar.className = 'strength-bar h-full rounded-full transition-all duration-300 ' + colors[score - 1];
+            strengthBar.style.width = `${(score / 5) * 100}%`;
+            
+            let feedback = messages[score - 1];
+            if (score < 5) {
+                feedback += '. Add: ' + [
+                    !patterns.length ? '8+ characters' : '',
+                    !patterns.uppercase ? 'uppercase' : '',
+                    !patterns.lowercase ? 'lowercase' : '',
+                    !patterns.numbers ? 'numbers' : '',
+                    !patterns.special ? 'special characters' : ''
+                ].filter(Boolean).join(', ');
+            }
+            
+            passwordFeedback.textContent = feedback;
+        }
+
+        // Form validation
+        function validateCurrentStep() {
+            const currentStepElement = document.getElementById(steps[currentStep]);
+            const inputs = currentStepElement.querySelectorAll('input[required], select[required]');
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value) {
+                    isValid = false;
+                    showValidationError(input);
+                } else {
+                    removeValidationError(input);
+                }
+            });
+
+            return isValid;
+        }
+
+        function showValidationError(input) {
+            input.classList.add('border-red-500', 'ring-red-500');
+            const errorMessage = document.createElement('p');
+            errorMessage.className = 'text-red-500 text-sm mt-1';
+            errorMessage.textContent = `${input.name} is required`;
+            input.parentNode.appendChild(errorMessage);
+        }
+
+        function removeValidationError(input) {
+            input.classList.remove('border-red-500', 'ring-red-500');
+            const errorMessage = input.parentNode.querySelector('.text-red-500');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+        }
+
+        // Handle registration
+        async function handleRegistration() {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showNotification('Registration successful! Redirecting...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 2000);
+                } else {
+                    throw new Error(result.error || 'Registration failed');
+                }
+            } catch (error) {
+                showNotification(error.message, 'error');
+            }
+        }
+
+        // Notification system
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.className = `fixed bottom-4 right-4 p-4 rounded-lg text-white ${
+                type === 'success' ? 'bg-green-600' : 'bg-red-600'
+            } transform transition-all duration-300 z-50`;
+            
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        ${type === 'success' 
+                            ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'
+                            : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+                        }
+                    </svg>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            notification.classList.remove('translate-y-full', 'opacity-0');
+            
+            setTimeout(() => {
+                notification.classList.add('translate-y-full', 'opacity-0');
+            }, 3000);
+        }
+
+        // Experience level slider customization
+        const experienceSlider = form.querySelector('input[type="range"]');
+        experienceSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            const gradient = `linear-gradient(to right, #3B82F6 0%, #8B5CF6 ${value * 20}%, #374151 ${value * 20}%, #374151 100%)`;
+            e.target.style.background = gradient;
+        });
+
+        // Initialize experience slider gradient
+        experienceSlider.dispatchEvent(new Event('input'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kingmaker AI - Shaping Tomorrow's Intelligence</title>
+    <meta name="description" content="Discover how Kingmaker AI is revolutionizing the future with cutting-edge artificial intelligence solutions.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="relative group">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                            <div class="relative px-4 py-2 text-2xl font-bold">
+                                Kingmaker
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="hover:text-blue-400 transition-colors">Home</a>
+                    <a href="/about" class="text-blue-400">About</a>
+                    <a href="/services" class="hover:text-blue-400 transition-colors">Services</a>
+                    <a href="/portfolio" class="hover:text-blue-400 transition-colors">Portfolio</a>
+                    <a href="/blog" class="hover:text-blue-400 transition-colors">Blog</a>
+                    <a href="/contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                    <div class="flex space-x-4">
+                        <a href="/login" class="px-4 py-2 rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors">Login</a>
+                        <a href="/register" class="px-4 py-2 rounded-md text-sm font-medium bg-purple-600 hover:bg-purple-700 transition-colors">Register</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md hover:bg-gray-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Animation -->
+    <section class="relative min-h-screen flex items-center justify-center">
+        <div id="hero-background" class="absolute inset-0 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/80 to-gray-900"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 animate__animated animate__fadeInUp">
+                Pioneering the Future of
+                <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                    Artificial Intelligence
+                </span>
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-300 animate__animated animate__fadeInUp animate__delay-1s">
+                We're not just developing AI – we're crafting the future where human potential meets artificial intelligence to create extraordinary possibilities.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#our-story" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all">
+                    Our Story
+                </a>
+                <a href="/contact" class="px-8 py-3 border-2 border-purple-500 rounded-lg font-semibold hover:bg-purple-500/20 transform hover:scale-105 transition-all">
+                    Join Our Journey
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Cards -->
+    <section id="our-story" class="relative py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Mission Card -->
+                <div class="group">
+                    <div class="relative p-8 bg-gray-800 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div class="relative">
+                            <h3 class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                                Our Mission
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                To democratize artificial intelligence by making cutting-edge AI solutions accessible, understandable, and actionable for businesses of all sizes. We're committed to driving innovation that creates real-world impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="group">
+                    <div class="relative p-8 bg-gray-800 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div class="relative">
+                            <h3 class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                                Our Vision
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                To create a world where artificial intelligence enhances human capabilities, fostering a future of endless possibilities through ethical AI development and implementation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="relative py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Our Core Values
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Innovation -->
+                <div class="value-card transform hover:scale-105 transition-all duration-300">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-blue-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Innovation First</h3>
+                            <p class="text-gray-400">Constantly pushing boundaries and exploring new frontiers in AI technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ethics -->
+                <div class="value-card transform hover:scale-105 transition-all duration-300">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-purple-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Ethical AI</h3>
+                            <p class="text-gray-400">Developing responsible AI solutions that prioritize transparency and fairness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excellence -->
+                <div class="value-card transform hover:scale-105 transition-all duration-300">
+                    <div class="relative p-6 bg-gray-900 rounded-xl h-full">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-pink-600/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Excellence</h3>
+                            <p class="text-gray-400">Delivering exceptional quality and value in every AI solution we create.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="relative py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stat-card p-6 bg-gray-800 rounded-xl text-center">
+                    <div class="text-4xl font-bold text-blue-400 mb-2 stat-number" data-target="500">0</div>
+                    <p class="text-gray-400">Projects Completed</p>
+                </div>
+                <div class="stat-card p-6 bg-gray-800 rounded-xl text-center">
+                    <div class="text-4xl font-bold text-purple-400 mb-2 stat-number" data-target="200">0</div>
+                    <p class="text-gray-400">Happy Clients</p>
+                </div>
+                <div class="stat-card p-6 bg-gray-800 rounded-xl text-center">
+                    <div class="text-4xl font-bold text-pink-400 mb-2 stat-number" data-target="50">0</div>
+                    <div class="text-gray-400">AI Models Developed</div>
+                </div>
+                <div class="stat-card p-6 bg-gray-800 rounded-xl text-center">
+                    <div class="text-4xl font-bold text-indigo-400 mb-2 stat-number" data-target="95">0</div>
+                    <div class="text-gray-400">Success Rate (%)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="relative py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Meet Our Visionaries
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card group">
+                    <div class="relative overflow-hidden rounded-xl bg-gray-900 transform hover:scale-105 transition-all duration-300">
+                        <div class="aspect-w-3 aspect-h-4">
+                            <img src="static/baba.jpeg" alt="CEO" class="object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h4 class="text-xl font-bold mb-1">Mr. Kailash </h4>
+                            <p class="text-gray-400 mb-4">Chief Executive Officer</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-blue-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-blue-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card group">
+                    <div class="relative overflow-hidden rounded-xl bg-gray-900 transform hover:scale-105 transition-all duration-300">
+                        <div class="aspect-w-3 aspect-h-4">
+                            <img src="static/aaie.jpeg" alt="CTO" class="object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h4 class="text-xl font-bold mb-1">Ms. Sharda </h4>
+                            <p class="text-gray-400 mb-4">Chief Technology Officer</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-blue-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-blue-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+{#                <div class="team-card group">#}
+{#                    <div class="relative overflow-hidden rounded-xl bg-gray-900 transform hover:scale-105 transition-all duration-300">#}
+{#                        <div class="aspect-w-3 aspect-h-4">#}
+{#                            <img src="static/baba.jpeg" alt="COO" class="object-cover">#}
+{#                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>#}
+{#                        </div>#}
+{#                        <div class="absolute bottom-0 left-0 right-0 p-6">#}
+{#                            <h4 class="text-xl font-bold mb-1">Emily Zhang</h4>#}
+{#                            <p class="text-gray-400 mb-4">Chief Operations Officer</p>#}
+{#                            <div class="flex space-x-4">#}
+{#                                <a href="#" class="text-gray-400 hover:text-blue-400">#}
+{#                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">#}
+{#                                        <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"/>#}
+{#                                    </svg>#}
+{#                                </a>#}
+{#                                <a href="#" class="text-gray-400 hover:text-blue-400">#}
+{#                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">#}
+{#                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>#}
+{#                                    </svg>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+           </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="relative py-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to Shape the Future?</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Join us in our mission to revolutionize the world through artificial intelligence. Let's create something extraordinary together.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all">
+                    Get Started
+                </a>
+                <a href="/careers" class="px-8 py-4 border-2 border-purple-500 rounded-lg font-semibold hover:bg-purple-500/20 transform hover:scale-105 transition-all">
+                    Join Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Section Parallax
+        gsap.to('.hero-content', {
+            yPercent: 50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero-section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        
+        function animateCounter(counter) {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const steps = 50;
+            const stepValue = target / steps;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += stepValue;
+                counter.textContent = Math.round(current);
+                
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                }
+            }, duration / steps);
+        }
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    animateCounter(counter);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // 3D Hero Background Animation
+        function initHeroBackground() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('hero-background').appendChild(renderer.domElement);
+
+            // Create neural network nodes
+            const nodeGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+            const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x4A90E2 });
+            const nodes = [];
+
+            for (let i = 0; i < 50; i++) {
+                const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+                node.position.x = Math.random() * 100 - 50;
+                node.position.y = Math.random() * 100 - 50;
+                node.position.z = Math.random() * 100 - 50;
+                nodes.push(node);
+                scene.add(node);
+            }
+
+            // Create connections between nodes
+            const connectionMaterial = new THREE.LineBasicMaterial({ color: 0x4A90E2, opacity: 0.3, transparent: true });
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    if (Math.random() > 0.95) {
+                        const geometry = new THREE.BufferGeometry().setFromPoints([
+                            nodes[i].position,
+                            nodes[j].position
+                        ]);
+                        const line = new THREE.Line(geometry, connectionMaterial);
+                        scene.add(line);
+                    }
+                }
+            }
+
+            camera.position.z = 50;
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                nodes.forEach(node => {
+                    node.rotation.x += 0.001;
+                    node.rotation.y += 0.001;
+                });
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // Initialize background if WebGL is supported
+        if (window.WebGLRenderingContext) {
+            try {
+                initHeroBackground();
+            } catch (e) {
+                console.log('WebGL not supported for hero background');
+            }
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Value Cards Animation
+        gsap.utils.toArray('.value-card').forEach(card => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        // Team Cards Animation
+        gsap.utils.toArray('.team-card').forEach(card => {
+            gsap.from(card, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.classList.add(
+            'fixed', 'inset-0', 'z-40', 'bg-gray-900', 'bg-opacity-95',
+            'backdrop-blur-lg', 'transform', 'transition-transform',
+            'duration-300', 'ease-in-out', 'translate-x-full', 'md:hidden'
+        );
+
+        // Mobile Menu Content
+        mobileMenu.innerHTML = `
+            <div class="flex flex-col h-full p-6">
+                <div class="flex justify-end mb-8">
+                    <button class="mobile-menu-close p-2 rounded-md hover:bg-gray-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-4">
+                    <a href="/" class="text-lg hover:text-blue-400 transition-colors">Home</a>
+                    <a href="/about" class="text-lg text-blue-400">About</a>
+                    <a href="/services" class="text-lg hover:text-blue-400 transition-colors">Services</a>
+                    <a href="/portfolio" class="text-lg hover:text-blue-400 transition-colors">Portfolio</a>
+                    <a href="/blog" class="text-lg hover:text-blue-400 transition-colors">Blog</a>
+                    <a href="/contact" class="text-lg hover:text-blue-400 transition-colors">Contact</a>
+                </nav>
+                <div class="mt-8 flex flex-col space-y-4">
+                    <a href="/login" class="px-4 py-2 rounded-md text-center bg-blue-600 hover:bg-blue-700 transition-colors">Login</a>
+                    <a href="/register" class="px-4 py-2 rounded-md text-center bg-purple-600 hover:bg-purple-700 transition-colors">Register</a>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(mobileMenu);
+
+        // Mobile Menu Functionality
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        document.querySelector('.mobile-menu-close').addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Particles Background
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
